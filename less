@@ -1,0 +1,43 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.ServletRequest;
+import jakarta.servlet.ServletResponse;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+
+
+public class Less extends HttpServlet {
+
+    public void init() throws ServletException{
+        System.out.println("This system is ready to be used");
+    }
+  
+    
+     public void service(ServletRequest req, ServletResponse res)
+       throws IOException, ServletException {
+        res.setContentType("text/html");
+        PrintWriter out = res.getWriter();
+        System.out.println("This system is processed");
+        out.println("You are cannot ");
+        destroy();   
+    }
+
+      
+    public void destroy(){
+        System.out.println("This system is destroyed");
+    }
+ 
+    @Override
+    public String getServletInfo() {
+        return "Short description";
+    }
+
+}
